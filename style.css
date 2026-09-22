@@ -1,0 +1,1242 @@
+/* =========================================
+   DASAR
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   OPENING
+   ========================================= */
+
+#opening {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        circle at 50% 45%,
+        #dff3ff 0%,
+        #c8e8fb 28%,
+        #9fd2f0 65%,
+        #75afd6 100%
+    );
+
+    color: #173f5f;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+
+/* =========================================
+   GLOW BACKGROUND
+   ========================================= */
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(45px);
+    pointer-events: none;
+}
+
+.glow-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.55);
+    top: 15%;
+    left: 10%;
+}
+
+.glow-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.35);
+    bottom: 10%;
+    right: 10%;
+}
+
+
+/* =========================================
+   TULISAN ATAS
+   ========================================= */
+
+.intro {
+    position: absolute;
+    top: 19%;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    animation: introAppear 1.5s ease forwards;
+}
+
+.small-title {
+    margin: 0 0 8px;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    font-weight: 600;
+    opacity: 0.65;
+}
+
+.intro h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    color: #204f70;
+}
+
+
+/* =========================================
+   HATI (BUTTON & SHAPE)
+   ========================================= */
+
+.heart-button {
+    position: absolute;
+    left: 50%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 190px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Bentuk Hati Tegak Menggunakan SVG Path via Clip-Path */
+.heart {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 140px;
+    height: 140px;
+
+    background: linear-gradient(
+        145deg,
+        #9bd8f7 0%,
+        #62afe0 45%,
+        #327eaf 100%
+    );
+
+    /* Curve SVG path yang mulus & tegak lurus */
+    clip-path: path('M 70 24 C 70 24 58 0 35 0 C 15.6 0 0 15.6 0 35 C 0 65 35 92 70 120 C 105 92 140 65 140 35 C 140 15.6 124.4 0 105 0 C 82 0 70 24 70 24 Z');
+
+    filter: drop-shadow(0 14px 20px rgba(35, 102, 145, 0.25))
+            drop-shadow(0 0 22px rgba(116, 190, 232, 0.45));
+
+    animation: heartbeat 1.8s ease-in-out infinite;
+    transition: filter 0.3s ease;
+}
+
+.heart-button:hover .heart {
+    filter: drop-shadow(0 16px 24px rgba(35, 102, 145, 0.3))
+            drop-shadow(0 0 30px rgba(116, 190, 232, 0.65));
+}
+
+
+/* =========================================
+   KILAUAN (SHINE)
+   ========================================= */
+
+.heart-shine {
+    position: absolute;
+    width: 26px;
+    height: 14px;
+    top: 22px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    filter: blur(1px);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.heart-shine::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    left: 18px;
+    top: 14px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   INSTRUCTION & PARTICLES
+   ========================================= */
+
+.instruction {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #275a7b;
+    z-index: 5;
+    animation: instructionAppear 2s ease forwards;
+}
+
+.instruction p {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.line {
+    width: 30px;
+    height: 1px;
+    background: rgba(39, 90, 123, 0.35);
+}
+
+#particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #4d9fd1;
+    transform: rotate(45deg);
+    border-radius: 3px;
+    animation: fly 1.2s ease-out forwards;
+}
+
+.particle::before,
+.particle::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.particle::before {
+    top: -5px;
+    left: 0;
+}
+
+.particle::after {
+    top: 0;
+    left: -5px;
+}
+
+
+/* =========================================
+   ANIMASI KEYFRAMES
+   ========================================= */
+
+/* Detak Tanpa Rotasi (Tegak) */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.08);
+    }
+    20% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.08);
+    }
+    45% {
+        transform: scale(1);
+    }
+}
+
+.heart-button.clicked .heart {
+    animation: heartExplosion 0.65s ease forwards;
+}
+
+@keyframes heartExplosion {
+    0% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fly {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(45deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) rotate(200deg) scale(0.2);
+    }
+}
+
+@keyframes introAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes instructionAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* =========================================
+   HALAMAN BIRTHDAY
+   ========================================= */
+
+#birthday {
+    display: none;
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #dff3ff,
+        #a9d8f5,
+        #5ea9dd
+    );
+    color: white;
+}
+
+#birthday.show {
+    display: block;
+}
+
+.birthday-placeholder {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.birthday-placeholder p {
+    font-family: Georgia, serif;
+    font-size: 50px;
+    font-style: italic;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+    #opening {
+        min-height: 100vh;
+    }
+
+    .intro {
+        top: 20%;
+    }
+
+    .intro h1 {
+        font-size: 38px;
+    }
+
+    .heart-button {
+        width: 135px;
+        height: 135px;
+    }
+
+    .heart {
+        width: 90px;
+        height: 90px;
+        left: 22px;
+        top: 22px;
+        /* Path SVG disesuaikan untuk skala mobile */
+        clip-path: path('M 45 15.4 C 45 15.4 37.3 0 22.5 0 C 10 0 0 10 0 22.5 C 0 41.8 22.5 59.1 45 77.1 C 67.5 59.1 90 41.8 90 22.5 C 90 10 80 0 67.5 0 C 52.7 0 45 15.4 45 15.4 Z');
+    }
+
+    .heart-shine {
+        width: 18px;
+        height: 10px;
+        top: 15px;
+        left: 16px;
+    }
+
+    .heart-shine::after {
+        width: 5px;
+        height: 3px;
+        left: 12px;
+        top: 9px;
+    }
+
+    .instruction {
+        bottom: 13%;
+    }
+}
+@media (max-width: 600px) {
+
+    /* MEMORY */
+    .memory {
+        margin-bottom: 100px;
+    }
+
+    .memory-left {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .memory-right {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    /* POLAROID */
+    .polaroid {
+        transform: rotate(-2deg);
+    }
+
+    .memory-right .polaroid {
+        transform: rotate(2deg);
+    }
+
+    /* LETTER */
+    #letter {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .letter-paper {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    /* FINAL */
+    #final {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .final-content h2 {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .final-message {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+/* =========================================
+   HALAMAN HAPPY BIRTHDAY
+   ========================================= */
+
+#birthday {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #dff3ff 0%,
+            #b9def5 40%,
+            #7eb9df 75%,
+            #5a9dca 100%
+        );
+
+    color: #204f70;
+}
+
+#birthday.show {
+    display: block;
+}
+
+.birthday-content {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 25px;
+
+    animation: birthdayAppear 1.5s ease forwards;
+}
+
+.birthday-small {
+    margin: 0 0 15px;
+
+    font-size: 10px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+
+    opacity: .65;
+}
+
+.birthday-content h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(52px, 12vw, 82px);
+    font-weight: normal;
+    font-style: italic;
+
+    color: #204f70;
+}
+
+.birthday-name {
+    margin: 18px 0 8px;
+
+    font-family: Georgia, serif;
+    font-size: 23px;
+
+    color: #28648a;
+}
+
+.birthday-date {
+    margin: 0;
+
+    font-size: 10px;
+    letter-spacing: .3em;
+
+    opacity: .6;
+}
+
+.birthday-divider {
+    margin: 28px 0;
+
+    width: 90px;
+    height: 1px;
+
+    background: rgba(32, 79, 112, .25);
+
+    position: relative;
+}
+
+.birthday-divider span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 0 12px;
+
+    background: #a9d8f5;
+
+    font-size: 18px;
+}
+
+.birthday-text {
+    max-width: 330px;
+
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #356b8e;
+}
+
+.continue-button {
+    margin-top: 45px;
+
+    border: none;
+    background: transparent;
+
+    color: #28648a;
+
+    font-size: 10px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    animation: continueFloat 2s ease-in-out infinite;
+}
+
+.continue-button span {
+    font-size: 18px;
+}
+
+/* =========================================
+   ANIMASI
+   ========================================= */
+
+@keyframes birthdayAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes continueFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+/* =========================================
+   MEMORY WALL
+   ========================================= */
+
+#memories {
+    min-height: 100vh;
+
+    padding: 100px 20px 140px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #dff3ff 0%,
+            #c5e5f8 45%,
+            #a9d8f5 100%
+        );
+
+    color: #204f70;
+}
+
+.memories-header {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.memories-header p {
+    margin: 0 0 18px;
+
+    font-size: 10px;
+    letter-spacing: .35em;
+
+    opacity: .6;
+}
+
+.memories-header h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 9vw, 60px);
+    line-height: 1.05;
+
+    font-weight: normal;
+    font-style: italic;
+}
+
+.memories-header span {
+    display: block;
+
+    margin-top: 35px;
+
+    font-size: 9px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+
+    opacity: .55;
+}
+
+
+/* LIST FOTO */
+
+.memory-list {
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* SATU MEMORY */
+
+.memory {
+    width: 100%;
+
+    display: flex;
+
+    margin-bottom: 140px;
+
+    opacity: 0;
+
+    animation:
+        memoryAppear linear forwards;
+
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+
+/* POSISI KIRI */
+
+.memory-left {
+    justify-content: flex-start;
+
+    padding-left: 5%;
+}
+
+
+/* POSISI KANAN */
+
+.memory-right {
+    justify-content: flex-end;
+
+    padding-right: 5%;
+}
+
+
+/* POLAROID */
+
+.polaroid {
+    width: 260px !important;
+    padding: 10px 10px 18px;
+
+    background: rgba(255, 255, 255, .92);
+
+    box-shadow:
+        0 18px 40px
+        rgba(35, 102, 145, .15);
+
+    transform: rotate(-2deg);
+}
+
+.memory-right .polaroid {
+    transform: rotate(2.5deg);
+}
+
+.polaroid:hover {
+    transform:
+        rotate(0deg)
+        translateY(-6px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(35, 102, 145, .2);
+}
+
+
+/* FOTO SEMENTARA */
+
+.photo-placeholder {
+   .polaroid img 
+   {
+    display: block !important;
+
+    width: 240px !important;
+    height: 180px !important;
+
+    max-width: none !important;
+    min-width: 0 !important;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin: 0 auto;
+}
+.polaroid {
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+.memory-left .polaroid {
+    transform: rotate(-2deg);
+}
+
+.memory-right .polaroid {
+    transform: rotate(2.5deg);
+}
+
+.memory-left .polaroid:hover {
+    transform:
+        rotate(-1deg)
+        translateY(-8px);
+}
+
+.memory-right .polaroid:hover {
+    transform:
+        rotate(1deg)
+        translateY(-8px);
+}
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8bc8ea,
+            #4e9bcf
+        );
+
+    color: white;
+
+    font-size: 10px;
+    letter-spacing: .25em;
+}
+
+
+/* CAPTION */
+
+.polaroid p {
+    margin: 15px 5px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #356b8e;
+}
+
+
+/* ANIMASI */
+
+@keyframes memoryAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(100px)
+            scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =========================================
+   LETTER
+   ========================================= */
+
+#letter {
+    min-height: 100vh;
+
+    padding:
+        160px 22px 180px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a9d8f5 0%,
+            #8fc5e7 45%,
+            #72afd7 100%
+        );
+
+    color: #204f70;
+}
+
+.letter-content {
+    max-width: 650px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.letter-small {
+    margin: 0 0 18px;
+
+    font-size: 10px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+
+    opacity: .65;
+}
+
+.letter-content h2 {
+    margin: 0 0 45px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 11vw, 72px);
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+/* KERTAS SURAT */
+
+.letter-paper {
+    max-width: 520px;
+    margin: auto;
+
+    padding: 45px 35px 50px;
+
+    background:
+        rgba(255, 255, 255, .88);
+
+    box-shadow:
+        0 25px 60px
+        rgba(35, 102, 145, .18);
+
+    text-align: left;
+
+    position: relative;
+}
+
+
+/* GARIS KECIL DI ATAS SURAT */
+
+.letter-paper::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: -18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #8fc5e7;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+/* ISI SURAT */
+
+.letter-paper p {
+    margin: 0 0 24px;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+    line-height: 2;
+
+    color: #356b8e;
+}
+
+
+/* PEMBUKA */
+
+.letter-paper p:first-child {
+    font-size: 18px;
+
+    color: #204f70;
+}
+
+
+/* PENUTUP */
+
+.letter-ending {
+    margin-top: 40px !important;
+
+    text-align: right;
+
+    font-style: italic;
+
+    color: #28648a !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #letter {
+        padding:
+            100px 18px 120px;
+    }
+
+    .letter-paper {
+        padding:
+            38px 25px 40px;
+    }
+
+    .letter-paper p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+}
+
+/* =========================================
+   FINAL MESSAGE
+   ========================================= */
+
+#final {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #dff3ff 0%,
+            #b9def5 35%,
+            #7eb9df 70%,
+            #5a9dca 100%
+        );
+
+    color: #204f70;
+
+    text-align: center;
+}
+
+.final-content {
+    max-width: 600px;
+
+    animation: finalAppear 2s ease forwards;
+}
+
+
+/* HATI */
+
+.final-heart {
+    margin-bottom: 35px;
+
+    font-size: 42px;
+
+    color: #327eaf;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(35, 102, 145, .2)
+        );
+
+    animation:
+        finalHeartbeat 2s ease-in-out infinite;
+}
+
+
+/* JUDUL KECIL */
+
+.final-small {
+    margin: 0 0 20px;
+
+    font-size: 9px;
+    letter-spacing: .4em;
+
+    opacity: .6;
+}
+
+
+/* JUDUL */
+
+.final-content h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 9vw, 62px);
+
+    line-height: 1.15;
+
+    font-weight: normal;
+
+    font-style: italic;
+}
+
+
+/* PESAN */
+
+.final-message {
+    max-width: 430px;
+
+    margin: 35px auto 0;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    color: #356b8e;
+}
+
+
+/* PENUTUP */
+
+.final-ending {
+    margin-top: 45px;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: #28648a;
+}
+
+
+/* ANIMASI */
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes finalHeartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .polaroid {
+        width: 220px !important;
+        max-width: 75vw;
+    }
+
+    .polaroid img {
+        height: 230px !important;
+    }
+
+}
+
+/* 29 FLOATING HEARTS */
+
+.floating-hearts {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    color: rgba(50, 126, 175, 0.35);
+    font-family: Georgia, serif;
+    animation-name: floatHeart;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+
+.letter-content,
+.final-content {
+    position: relative;
+    z-index: 2;
+}
+#letter .floating-heart {
+    color: rgba(50, 126, 175, 0.45);
+}
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    color: rgba(50, 126, 175, 0.35);
+    font-family: Georgia, serif;
+    animation-name: floatHeart;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(8deg) scale(1);
+        opacity: 0.65;
+    }
+
+    85% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(-8deg) scale(0.8);
+        opacity: 0;
+    }
+}
