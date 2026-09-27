@@ -373,7 +373,7 @@ body {
     }
 
     .intro {
-        top: 20%;
+        top: 18%;
     }
 
     .intro h1 {
@@ -383,6 +383,7 @@ body {
     .heart-button {
         width: 135px;
         height: 135px;
+        top: 50%;
     }
 
     .heart {
@@ -390,7 +391,6 @@ body {
         height: 90px;
         left: 22px;
         top: 22px;
-        /* Path SVG disesuaikan untuk skala mobile */
         clip-path: path('M 45 15.4 C 45 15.4 37.3 0 22.5 0 C 10 0 0 10 0 22.5 C 0 41.8 22.5 59.1 45 77.1 C 67.5 59.1 90 41.8 90 22.5 C 90 10 80 0 67.5 0 C 52.7 0 45 15.4 45 15.4 Z');
     }
 
@@ -409,7 +409,17 @@ body {
     }
 
     .instruction {
-        bottom: 13%;
+        bottom: 19%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .instruction p {
+        white-space: nowrap;
+        margin: 0;
     }
 }
 @media (max-width: 600px) {
