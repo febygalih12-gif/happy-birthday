@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For You</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section id="countdownPage">
+    <div class="countdown-decor decor-one">✦</div>
+    <div class="countdown-decor decor-two">♡</div>
+    <div class="countdown-decor decor-three">✧</div>
+    <div class="countdown-decor decor-four">♡</div>
+
+    <div class="countdown-card">
+        <p class="countdown-kicker">A LITTLE SURPRISE FOR YOU</p>
+
+        <div class="countdown-heart">♡</div>
+
+        <h1>Almost your day...</h1>
+        <p class="countdown-note">
+            Tinggal sebentar lagi, hehe.<br>
+            Mas nyiapin sesuatu kecil buat Ade.
+        </p>
+
+        <div class="countdown-timer" aria-live="polite">
+            <div class="time-box">
+                <strong id="countDays">00</strong>
+                <span>Hari</span>
+            </div>
+            <div class="time-box">
+                <strong id="countHours">00</strong>
+                <span>Jam</span>
+            </div>
+            <div class="time-box">
+                <strong id="countMinutes">00</strong>
+                <span>Menit</span>
+            </div>
+            <div class="time-box">
+                <strong id="countSeconds">00</strong>
+                <span>Detik</span>
+            </div>
+        </div>
+
+        <p id="countdownMessage" class="countdown-message">
+            Your little surprise is waiting ♡
+        </p>
+
+        <button id="countdownContinue" class="countdown-button" hidden>
+            Oke, Ade siap! ♡
+        </button>
+
+        <p class="countdown-footer">made with love, just for you</p>
+    </div>
+</section>
+<section id="gamePage">
+    <div class="game-decor game-decor-one">✦</div>
+    <div class="game-decor game-decor-two">♡</div>
+    <div class="game-decor game-decor-three">✧</div>
+
+    <div class="game-card">
+        <p class="game-kicker">SEBELUM KEJUTANNYA...</p>
+        <h1>Coba cocokkan dulu ♡</h1>
+        <p class="game-intro">
+            Cocokin gambar yang sama, ya. Kalau sudah, ada sesuatu buat Ade.<br>
+            Ada kejutan kecil setelah Ade berhasil. ♡
+        </p>
+
+        <div class="game-status">
+            <span>Pairs found</span>
+            <strong id="pairsFound">0 / 6</strong>
+        </div>
+
+        <div id="memoryGame" class="game-grid"></div>
+
+        <div id="gameWinMessage" class="game-win" hidden>
+            <div class="game-win-heart">♡</div>
+            <h2>Yeay, berhasil! ♡</h2>
+<p>
+    Nah, Ade pinter hehe.<br>
+    Sekarang pencet hati yang di tengah, ya.
+    Mas mau nunjukin sesuatu.
+</p>
+            <button id="gameContinueButton" class="game-button">
+                Lanjut, Ade penasaran ♡
+            </button>
+        </div>
+
+        <p class="game-footer">Santai aja, nggak usah buru-buru hehe.</p>
+    </div>
+</section>
+    <!-- ==============================
+         OPENING
+         ============================== -->
+
+    <main id="opening">
+
+        <!-- Background glow -->
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+<div class="opening-decoration decoration-star">✦</div>
+<div class="opening-decoration decoration-sparkle">✧</div>
+<div class="opening-decoration decoration-heart">♡</div>
+<div class="opening-decoration decoration-heart-two">♡</div>
+        <!-- Tulisan atas -->
+        <div class="intro">
+    <p class="small-title">A LITTLE SOMETHING</p>
+    <h1>for you</h1>
+    <p class="intro-note">
+        Mas ada sesuatu buat Ade.<br>
+        Semoga Ade suka, ya. ♡
+    </p>
+</div>
+
+
+        <!-- HATI UTAMA -->
+
+        <button
+            id="heartButton"
+            class="heart-button"
+            aria-label="Open birthday surprise"
+        >
+
+            <span class="heart">
+                <span class="heart-shine"></span>
+            </span>
+
+        </button>
+
+
+        <!-- Tulisan bawah -->
+
+        <div class="instruction">
+
+            <span class="line"></span>
+
+            <p>
+                tap the heart
+            </p>
+
+            <span class="line"></span>
+
+        </div>
+
+
+        <!-- Hati kecil yang akan terbang -->
+
+        <div id="particles"></div>
+
+    </main>
+
+
+    <!-- ==============================
+         HALAMAN SETELAH OPENING
+         Untuk sementara kosong.
+         Nanti kita isi.
+         ============================== -->
+
+    <section id="birthday">
+    <div class="birthday-decoration birthday-decor-one">✦</div>
+    <div class="birthday-decoration birthday-decor-two">♡</div>
+    <div class="birthday-decoration birthday-decor-three">✧</div>
+    <div class="birthday-decoration birthday-decor-four">♡</div>
+
+    <div class="birthday-content">
+
+        <p class="birthday-small">
+            TODAY IS ALL ABOUT YOU
+        </p>
+
+        <h2>
+            Happy Birthday
+        </h2>
+
+        <p class="birthday-name">
+            Untuk seseorang yang kusayangi Nay
+        </p>
+
+        <p class="birthday-date">
+    29 • September • 2002
+</p>
+
+        <div class="birthday-divider">
+            <span>♡</span>
+        </div>
+
+        <p class="birthday-text">
+    Happy birthday, sayang! ♡<br>
+    Mas sebenarnya udah nyiapin ini dari kemarin-kemarin,
+    dan akhirnya sekarang sayang bisa lihat juga, hehe.
+    <br><br>
+    Ada beberapa foto dan cerita kecil yang pengen mas ceritain.
+    So, let's take a little trip through our memories.
+</p>
+
+        <button class="continue-button" id="memoryButton">
+    our little memories
+    <span>↓</span>
+</button>
+
+    </div>
+<section id="memories">
+<div class="memories-decoration memories-star-one">✦</div>
+<div class="memories-decoration memories-star-two">✧</div>
+<div class="memories-decoration memories-heart-one">♡</div>
+<div class="memories-decoration memories-heart-two">♡</div>
+    <div class="memories-header">
+    <div class="memory-heading-heart">♡</div>
+
+    <p class="memory-kicker">A LITTLE WALK THROUGH OUR STORY</p>
+
+    <h2>Our little<br>memory lane</h2>
+
+    <p class="memory-intro">
+        Dari foto pertama yang ade kirim,
+        sampai semua yang akhirnya kita lewati bareng.
+        <br><br>
+        Mas pilih beberapa foto yang punya cerita sendiri buat mas.
+        Mungkin sederhana, tapi semuanya punya tempat spesial. ♡
+    </p>
+
+    <span class="memory-scroll">scroll pelan-pelan, ya ↓</span>
+</div>
+
+
+    <div class="memory-list">
+
+        <div class="memory memory-left">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto01.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>the first photo you ever sent me.
+somehow, it became my favorite. ♡</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-right">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto02.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>another photo of you that I loved.
+maybe this was when something started to feel different.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-left">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto03.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>you wearing the clothes I bought for you.
+i don't know why, but seeing you in it made me so happy.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-right">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto04.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>you, in your little college days.
+watching you grow has always been something special to me.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-left">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto05.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>the first time we finally met.
+a moment I'll always remember.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-right">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto06.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>our first New Year together.
+starting a new year with you felt really special.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-left">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto07.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>you, with your sister.
+a little glimpse of the people who are part of your world.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-right">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto08.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>you and your dad.
+one of the people who helped make you who you are today.</p>
+            </div>
+        </div>
+
+
+        <div class="memory memory-left">
+            <div
+    class="polaroid"
+    style="width: 260px !important; max-width: 260px !important;"
+>
+             <img
+    src="images/foto09.jpeg"
+    alt="Our memory"
+    style="width: 240px !important; height: 280px !important; max-width: 240px !important; object-fit: cover; display: block; margin: 0 auto;"
+>
+
+                <p>you and your mom.
+and one of the reasons you grew into the person I love today. ♡</p>
+            </div>
+        </div>
+
+    </div>
+
+    <section id="letter">
+        <div class="floating-hearts" id="letterHearts"></div>
+<div class="letter-decoration letter-decor-one">✦</div>
+<div class="letter-decoration letter-decor-two">♡</div>
+<div class="letter-decoration letter-decor-three">✧</div>
+    <div class="letter-content">
+
+        <p class="letter-small">
+            A LITTLE LETTER
+        </p>
+
+        <h2>
+            For you,
+        </h2>
+
+        <div class="letter-paper">
+    <p>Dear Sayangkuuu,</p>
+
+    <p>
+        Happy birthday ya, sayang. ♡
+        Akhirnya sampai juga di hari spesial ade.
+        Mas sebenarnya agak bingung mau nulis apa,
+        tapi pengen tetap bikin sesuatu yang bisa ade simpan
+        dan lihat lagi kapan-kapan.
+    </p>
+
+    <p>
+        Kalau lihat foto-foto tadi, lucu juga ya.
+        Awalnya cuma dari chat yang ade kirim,
+        terus jadi sering ngobrol, makin dekat,
+        sampai akhirnya kita bisa ketemu langsung.
+        Nggak nyangka aja, dari hal sesederhana itu
+        ternyata bisa jadi cerita sepanjang ini.
+    </p>
+
+    <p>
+        Mas senang punya banyak kenangan sama ade.
+        Ada momen yang mungkin kelihatannya biasa aja,
+        tapi kalau diingat lagi malah bikin senyum sendiri.
+        And honestly, I wouldn't trade those moments for anything.
+    </p>
+
+    <p>
+        Makasih ya sudah hadir di hidup mas.
+        Makasih juga buat waktu, perhatian,
+        cerita random, dan hal-hal kecil yang mungkin
+        ade nggak sadar ternyata bikin hari mas lebih menyenangkan.
+    </p>
+
+    <p>
+        Di umur ade yang baru ini, semoga banyak hal baik datang.
+        Semoga kuliahnya lancar, urusan-urusannya dimudahkan,
+        dan apa pun yang lagi ade usahakan bisa pelan-pelan tercapai.
+        Jangan lupa istirahat juga, jangan terlalu keras sama diri sendiri.
+    </p>
+
+    <p>
+        Mas mungkin nggak selalu jago ngomong atau nunjukin semuanya,
+        tapi mas bersyukur banget bisa kenal ade
+        dan punya kesempatan buat jalanin banyak cerita bareng ade.
+    </p>
+
+    <p>
+        Here's to more little moments, more pictures,
+        more random stories, and more days to celebrate you.
+        Semoga masih banyak kenangan yang bisa kita buat bersama.
+    </p>
+
+    <p class="letter-ending">
+        Happy birthday, sayang.<br>
+        I love you, always. ♡
+    </p>
+</div>
+
+    </div>
+
+</section>
+
+<section id="final">
+<div class="floating-hearts" id="finalHearts"></div>
+<div class="final-decoration final-decor-one">✦</div>
+<div class="final-decoration final-decor-two">♡</div>
+<div class="final-decoration final-decor-three">✧</div>
+<div class="final-decoration final-decor-four">♡</div>
+<section id="final">
+    <div class="final-content">
+    <div class="final-heart">♥</div>
+
+    <p class="final-small">ONE LAST THING...</p>
+
+    <h2>Happy Birthday,<br>my favorite person.</h2>
+
+    <p class="final-message">
+        Semoga umur baru ini bawa banyak hal baik buat ade.
+        Semoga yang lagi ade usahakan satu per satu bisa tercapai,
+        kuliahnya lancar, dan hari-harimu lebih sering diisi hal-hal
+        yang bikin ade senyum.
+    </p>
+
+    <p class="final-message">
+        Makasih ya sudah hadir di hidup mas.
+        Makasih buat semua cerita, ketawa, foto-foto,
+        dan momen sederhana yang sekarang jadi kenangan
+        yang mas suka banget.
+    </p>
+
+    <p class="final-message">
+        Mas nggak tahu nanti bakal ada cerita apa lagi,
+        tapi aku senang bisa jalanin banyak hal sama ade.
+        So here's to more memories together. ♡
+    </p>
+
+    <p class="final-ending">
+        I'm really glad it's you.<br>
+        I love you, sayang. ♡
+    </p>
+
+    <div class="final-signature">
+        — dari mas, yang selalu senang punya ade
+    </div>
+</div>
+
+</section>
+<audio id="backgroundMusic" loop>
+    <source src="music/lagu.mp3" type="audio/mpeg">
+</audio>
+    <script src="script.js"></script>
+
+</body>
+</html>
